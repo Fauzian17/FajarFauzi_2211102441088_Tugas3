@@ -15,8 +15,8 @@ public class burung extends Player
      */
     public burung(){
     GreenfootImage brg=new GreenfootImage("brg1.png");
-    int lebar=100;
-    int tinggi=100;
+    int lebar=60;
+    int tinggi=60;
     brg.scale(lebar,tinggi);
     setImage(brg);
     }
@@ -36,8 +36,8 @@ public class burung extends Player
             lastNumberNo++;
         }
         GreenfootImage newImage=new GreenfootImage("brg"+lastNumberNo+".png");
-        int lebar=100;
-        int tinggi=100                               ;
+        int lebar=60;
+        int tinggi=60;                               ;
         newImage.scale(lebar,tinggi);
         setImage(newImage);
     }
@@ -60,6 +60,9 @@ public class burung extends Player
         }
         if (Greenfoot.isKeyDown("right")) {
             setLocation(getX() + speed, getY());
+        }
+        if(isTouching(rocket.class)){
+            Greenfoot.stop();
         }
     }
 }

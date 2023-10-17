@@ -14,6 +14,8 @@ public class Player extends Actor
      */
     public void act()
     {
-
+        if(isTouching(rocket.class)){
+            Greenfoot.stop();
+        }
     }
 }
